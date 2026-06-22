@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     
     <!-- ===== ЯНДЕКС МЕТРИКА ===== -->
-    <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -28,7 +27,6 @@
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/110068128" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
     
     <style>
         * {
@@ -81,13 +79,19 @@
             align-items: center;
             gap: 12px;
         }
-        .navbar .logo img {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            border: 2px solid #f77f00;
-            padding: 2px;
+        .navbar .logo .qr-small {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            border: 3px solid #f77f00;
+            padding: 4px;
             background: #fff;
+            box-shadow: 0 0 20px rgba(247, 127, 0, 0.3);
+            transition: 0.3s;
+        }
+        .navbar .logo .qr-small:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(247, 127, 0, 0.5);
         }
         .navbar .logo span {
             color: #f77f00;
@@ -594,9 +598,11 @@
             display: block;
             color: #2d4059;
         }
+
+        /* ===== ПОДВАЛ ===== */
         .footer {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px 40px;
             color: #6c757d;
             font-size: 14px;
             border-top: 1px solid #1f2a3f;
@@ -605,30 +611,37 @@
         .footer i {
             color: #f77f00;
         }
-        .footer .qr-container {
-            margin: 15px auto;
+        .footer .qr-big {
+            margin: 20px auto;
             display: inline-block;
             background: #fff;
-            padding: 10px;
-            border-radius: 16px;
-            border: 3px solid #f77f00;
+            padding: 15px;
+            border-radius: 20px;
+            border: 4px solid #f77f00;
+            box-shadow: 0 0 40px rgba(247, 127, 0, 0.2);
+            transition: 0.3s;
         }
-        .footer .qr-container img {
-            width: 130px;
-            height: 130px;
+        .footer .qr-big:hover {
+            box-shadow: 0 0 60px rgba(247, 127, 0, 0.4);
+            transform: scale(1.02);
+        }
+        .footer .qr-big img {
+            width: 180px;
+            height: 180px;
             display: block;
-            border-radius: 8px;
+            border-radius: 10px;
         }
         .footer .qr-label {
-            font-size: 12px;
-            color: #8a9bb0;
-            margin-top: 6px;
+            font-size: 16px;
+            color: #f77f00;
+            font-weight: 700;
+            margin-top: 8px;
         }
         .footer .socials {
             display: flex;
             justify-content: center;
             gap: 18px;
-            margin-top: 12px;
+            margin-top: 16px;
         }
         .footer .socials a {
             color: #6c757d;
@@ -656,6 +669,7 @@
         .toast i {
             margin-right: 10px;
         }
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 12px 18px;
@@ -663,9 +677,9 @@
             .navbar .logo {
                 font-size: 22px;
             }
-            .navbar .logo img {
-                width: 36px;
-                height: 36px;
+            .navbar .logo .qr-small {
+                width: 40px;
+                height: 40px;
             }
             .nav-links a {
                 font-size: 12px;
@@ -689,9 +703,9 @@
                 padding: 20px;
                 margin: 10px;
             }
-            .footer .qr-container img {
-                width: 100px;
-                height: 100px;
+            .footer .qr-big img {
+                width: 140px;
+                height: 140px;
             }
         }
         @media (max-width: 480px) {
@@ -711,6 +725,10 @@
             .menu-grid {
                 grid-template-columns: 1fr;
             }
+            .footer .qr-big img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
@@ -719,7 +737,7 @@
     <!-- ===== НАВИГАЦИЯ ===== -->
     <nav class="navbar">
         <a href="#" class="logo">
-            <img src="qr-code.gif" alt="QR-код" />
+            <img src="qr-code.gif" alt="QR-код" class="qr-small" />
             <span><i class="fas fa-bolt"></i>FAST<span>FOOT</span></span>
         </a>
         <div class="nav-links">
@@ -827,10 +845,10 @@
     <footer class="footer">
         <p><i class="fas fa-bolt"></i> FASTFOOT — доставка фастфуда в Усть-Каменогорске 24/7</p>
         
-        <div class="qr-container">
+        <div class="qr-big">
             <img src="qr-code.gif" alt="QR-код для заказа" />
         </div>
-        <div class="qr-label">📱 Отсканируйте для быстрого заказа</div>
+        <div class="qr-label">📱 Отсканируйте QR-код для заказа</div>
         
         <div class="socials">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -975,7 +993,6 @@
                 return;
             }
 
-            // === ОТПРАВКА В TELEGRAM ===
             const message = `🆕 НОВЫЙ ЗАКАЗ!\n\n` +
                 `🏢 ${branch}\n` +
                 `📞 ${phoneBranch}\n\n` +
