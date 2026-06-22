@@ -79,19 +79,19 @@
             align-items: center;
             gap: 12px;
         }
-        .navbar .logo .qr-small {
-            width: 50px;
-            height: 50px;
+        .navbar .logo img {
+            width: 46px;
+            height: 46px;
             border-radius: 12px;
             border: 3px solid #f77f00;
             padding: 4px;
             background: #fff;
-            box-shadow: 0 0 20px rgba(247, 127, 0, 0.3);
+            box-shadow: 0 0 20px rgba(247, 127, 0, 0.25);
             transition: 0.3s;
         }
-        .navbar .logo .qr-small:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 40px rgba(247, 127, 0, 0.5);
+        .navbar .logo img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 35px rgba(247, 127, 0, 0.45);
         }
         .navbar .logo span {
             color: #f77f00;
@@ -598,8 +598,6 @@
             display: block;
             color: #2d4059;
         }
-
-        /* ===== ПОДВАЛ ===== */
         .footer {
             text-align: center;
             padding: 30px 20px 40px;
@@ -611,23 +609,23 @@
         .footer i {
             color: #f77f00;
         }
-        .footer .qr-big {
+        .footer .qr-wrapper {
             margin: 20px auto;
             display: inline-block;
             background: #fff;
-            padding: 15px;
+            padding: 16px;
             border-radius: 20px;
             border: 4px solid #f77f00;
             box-shadow: 0 0 40px rgba(247, 127, 0, 0.2);
             transition: 0.3s;
         }
-        .footer .qr-big:hover {
+        .footer .qr-wrapper:hover {
             box-shadow: 0 0 60px rgba(247, 127, 0, 0.4);
             transform: scale(1.02);
         }
-        .footer .qr-big img {
-            width: 180px;
-            height: 180px;
+        .footer .qr-wrapper img {
+            width: 170px;
+            height: 170px;
             display: block;
             border-radius: 10px;
         }
@@ -669,7 +667,6 @@
         .toast i {
             margin-right: 10px;
         }
-
         @media (max-width: 768px) {
             .navbar {
                 padding: 12px 18px;
@@ -677,7 +674,7 @@
             .navbar .logo {
                 font-size: 22px;
             }
-            .navbar .logo .qr-small {
+            .navbar .logo img {
                 width: 40px;
                 height: 40px;
             }
@@ -703,7 +700,7 @@
                 padding: 20px;
                 margin: 10px;
             }
-            .footer .qr-big img {
+            .footer .qr-wrapper img {
                 width: 140px;
                 height: 140px;
             }
@@ -725,7 +722,7 @@
             .menu-grid {
                 grid-template-columns: 1fr;
             }
-            .footer .qr-big img {
+            .footer .qr-wrapper img {
                 width: 120px;
                 height: 120px;
             }
@@ -734,10 +731,9 @@
 </head>
 <body>
 
-    <!-- ===== НАВИГАЦИЯ ===== -->
     <nav class="navbar">
         <a href="#" class="logo">
-            <img src="qr-code.gif" alt="QR-код" class="qr-small" />
+            <img src="qr-code.png" alt="QR-код" id="qrNav" />
             <span><i class="fas fa-bolt"></i>FAST<span>FOOT</span></span>
         </a>
         <div class="nav-links">
@@ -750,7 +746,6 @@
         </div>
     </nav>
 
-    <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
     <section class="hero">
         <h1>Вкусный фастфут<br /><span>24 часа в сутки</span></h1>
         <p>Доставка по Усть-Каменогорску за 30–45 минут. Свежие бургеры, хот-доги и шаурма.</p>
@@ -765,7 +760,6 @@
         </div>
     </section>
 
-    <!-- ===== МЕНЮ ===== -->
     <section class="menu-section" id="menu">
         <h2>🍔 Наше меню</h2>
         <p class="subtitle">Выберите блюдо и добавьте в корзину</p>
@@ -779,7 +773,6 @@
         <div class="menu-grid" id="menuGrid"></div>
     </section>
 
-    <!-- ===== ФОРМА ЗАКАЗА ===== -->
     <section class="order-section" id="order">
         <h2>📦 Оформить заказ</h2>
         <p class="subtitle">Заполните форму, и мы доставим еду за 30–45 минут</p>
@@ -823,7 +816,6 @@
         </div>
     </section>
 
-    <!-- ===== КОРЗИНА ===== -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
@@ -838,17 +830,15 @@
         </div>
     </div>
 
-    <!-- ===== УВЕДОМЛЕНИЕ ===== -->
     <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMessage">Добавлено в корзину</span></div>
 
-    <!-- ===== ПОДВАЛ С QR-КОДОМ ===== -->
     <footer class="footer">
         <p><i class="fas fa-bolt"></i> FASTFOOT — доставка фастфуда в Усть-Каменогорске 24/7</p>
         
-        <div class="qr-big">
-            <img src="qr-code.gif" alt="QR-код для заказа" />
+        <div class="qr-wrapper">
+            <img src="qr-code.png" alt="QR-код для заказа" />
         </div>
-        <div class="qr-label">📱 Отсканируйте QR-код для заказа</div>
+        <div class="qr-label">📱 Отсканируйте для быстрого заказа</div>
         
         <div class="socials">
             <a href="#"><i class="fab fa-instagram"></i></a>
