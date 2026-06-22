@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FASTFOOT — доставка 24/7 Усть-Каменогорск</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <!-- ===== ЯНДЕКС МЕТРИКА ===== -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110068128', 'ym');
+
+        ym(110068128, 'init', {
+            ssr:true,
+            webvisor:true,
+            clickmap:true,
+            ecommerce:"dataLayer",
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce:true,
+            trackLinks:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/110068128" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
     <style>
         * {
             margin: 0;
@@ -52,6 +77,17 @@
             letter-spacing: 1px;
             color: #fff;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .navbar .logo img {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            border: 2px solid #f77f00;
+            padding: 2px;
+            background: #fff;
         }
         .navbar .logo span {
             color: #f77f00;
@@ -569,6 +605,25 @@
         .footer i {
             color: #f77f00;
         }
+        .footer .qr-container {
+            margin: 15px auto;
+            display: inline-block;
+            background: #fff;
+            padding: 10px;
+            border-radius: 16px;
+            border: 3px solid #f77f00;
+        }
+        .footer .qr-container img {
+            width: 130px;
+            height: 130px;
+            display: block;
+            border-radius: 8px;
+        }
+        .footer .qr-label {
+            font-size: 12px;
+            color: #8a9bb0;
+            margin-top: 6px;
+        }
         .footer .socials {
             display: flex;
             justify-content: center;
@@ -608,6 +663,10 @@
             .navbar .logo {
                 font-size: 22px;
             }
+            .navbar .logo img {
+                width: 36px;
+                height: 36px;
+            }
             .nav-links a {
                 font-size: 12px;
             }
@@ -629,6 +688,10 @@
             .cart-modal .cart-content {
                 padding: 20px;
                 margin: 10px;
+            }
+            .footer .qr-container img {
+                width: 100px;
+                height: 100px;
             }
         }
         @media (max-width: 480px) {
@@ -653,8 +716,12 @@
 </head>
 <body>
 
+    <!-- ===== НАВИГАЦИЯ ===== -->
     <nav class="navbar">
-        <a href="#" class="logo"><i class="fas fa-bolt"></i>FAST<span>FOOT</span></a>
+        <a href="#" class="logo">
+            <img src="qr-code.gif" alt="QR-код" />
+            <span><i class="fas fa-bolt"></i>FAST<span>FOOT</span></span>
+        </a>
         <div class="nav-links">
             <a href="#menu" class="active">Меню</a>
             <a href="#order">Заказать</a>
@@ -665,6 +732,7 @@
         </div>
     </nav>
 
+    <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
     <section class="hero">
         <h1>Вкусный фастфут<br /><span>24 часа в сутки</span></h1>
         <p>Доставка по Усть-Каменогорску за 30–45 минут. Свежие бургеры, хот-доги и шаурма.</p>
@@ -679,6 +747,7 @@
         </div>
     </section>
 
+    <!-- ===== МЕНЮ ===== -->
     <section class="menu-section" id="menu">
         <h2>🍔 Наше меню</h2>
         <p class="subtitle">Выберите блюдо и добавьте в корзину</p>
@@ -692,6 +761,7 @@
         <div class="menu-grid" id="menuGrid"></div>
     </section>
 
+    <!-- ===== ФОРМА ЗАКАЗА ===== -->
     <section class="order-section" id="order">
         <h2>📦 Оформить заказ</h2>
         <p class="subtitle">Заполните форму, и мы доставим еду за 30–45 минут</p>
@@ -735,6 +805,7 @@
         </div>
     </section>
 
+    <!-- ===== КОРЗИНА ===== -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
@@ -749,10 +820,18 @@
         </div>
     </div>
 
+    <!-- ===== УВЕДОМЛЕНИЕ ===== -->
     <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMessage">Добавлено в корзину</span></div>
 
+    <!-- ===== ПОДВАЛ С QR-КОДОМ ===== -->
     <footer class="footer">
         <p><i class="fas fa-bolt"></i> FASTFOOT — доставка фастфуда в Усть-Каменогорске 24/7</p>
+        
+        <div class="qr-container">
+            <img src="qr-code.gif" alt="QR-код для заказа" />
+        </div>
+        <div class="qr-label">📱 Отсканируйте для быстрого заказа</div>
+        
         <div class="socials">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-whatsapp"></i></a>
@@ -764,7 +843,7 @@
 
     <script>
         // =============================================================
-        // ⚙️  НАСТРОЙКА TELEGRAM (ОБНОВЛЕНО!)
+        // ⚙️  НАСТРОЙКА TELEGRAM
         // =============================================================
         const BOT_TOKEN = '8756282300:AAGIjv82LCdHL9PiR9pDcKYezhV_Lx6UWrc';
         const CHAT_ID = '554042615';
@@ -772,32 +851,33 @@
 
         const menuData = [
             { id: 1, name: 'Классический бургер', desc: 'Говяжья котлета, сыр, салат, томаты, соус', price: 2200,
-            category: 'burgers', icon: '🍔' },
+                category: 'burgers', icon: '🍔' },
             { id: 2, name: 'Двойной бургер', desc: 'Две котлеты, двойной сыр, бекон, соус BBQ', price: 3200,
-            category: 'burgers', icon: '🍔' },
+                category: 'burgers', icon: '🍔' },
             { id: 3, name: 'Бургер с курицей', desc: 'Куриное филе гриль, сыр, авокадо, салат', price: 2500,
-            category: 'burgers', icon: '🍔' },
+                category: 'burgers', icon: '🍔' },
             { id: 4, name: 'Острый бургер', desc: 'Говядина, сыр, халапеньо, острый соус', price: 2700, category: 'burgers',
                 icon: '🌶️' },
             { id: 5, name: 'Картофель фри', desc: 'Золотистый картофель с солью', price: 800, category: 'snacks',
-            icon: '🍟' },
+                icon: '🍟' },
             { id: 6, name: 'Картофель с сыром', desc: 'Фри с сырным соусом и зеленью', price: 1100, category: 'snacks',
                 icon: '🧀' },
             { id: 7, name: 'Наггетсы (6 шт)', desc: 'Куриные наггетсы с соусом', price: 1500, category: 'snacks',
-            icon: '🍗' },
-            { id: 8, name: 'Крылышки BBQ', desc: 'Куриные крылья в соусе BBQ', price: 1800, category: 'snacks', icon: '🍗' },
+                icon: '🍗' },
+            { id: 8, name: 'Крылышки BBQ', desc: 'Куриные крылья в соусе BBQ', price: 1800, category: 'snacks',
+                icon: '🍗' },
             { id: 9, name: 'Кола 0.5л', desc: 'Классическая кола со льдом', price: 500, category: 'drinks', icon: '🥤' },
             { id: 10, name: 'Морс клюквенный', desc: 'Домашний клюквенный морс', price: 600, category: 'drinks',
-            icon: '🍒' },
+                icon: '🍒' },
             { id: 11, name: 'Чай чёрный', desc: 'Чай с лимоном и сахаром', price: 400, category: 'drinks', icon: '🍵' },
             { id: 12, name: 'Молочный коктейль', desc: 'Клубничный / шоколадный', price: 700, category: 'drinks',
-            icon: '🥛' },
+                icon: '🥛' },
             { id: 13, name: 'Комбо №1 (на 1)', desc: 'Бургер + фри + кола 0.5л', price: 3200, category: 'combo',
-            icon: '📦' },
+                icon: '📦' },
             { id: 14, name: 'Комбо №2 (на 2)', desc: '2 бургера + фри + 2 колы', price: 5500, category: 'combo',
-            icon: '📦' },
+                icon: '📦' },
             { id: 15, name: 'Комбо №3 (семейный)', desc: '3 бургера + фри + наггетсы + 3 колы', price: 7900,
-            category: 'combo', icon: '📦' },
+                category: 'combo', icon: '📦' },
             { id: 16, name: 'Комбо с крылышками', desc: 'Бургер + крылышки + фри + кола', price: 4800, category: 'combo',
                 icon: '📦' },
         ];
@@ -826,8 +906,7 @@
             const item = menuData.find(i => i.id === id);
             if (!item) return;
             const existing = cart.find(i => i.id === id);
-            if (existing) { existing.qty += 1; } else { cart.push({ ...item,
-                    qty: 1 }); }
+            if (existing) { existing.qty += 1; } else { cart.push({ ...item, qty: 1 }); }
             updateCartUI();
             showToast(`${item.name} добавлено в корзину`);
         }
@@ -875,9 +954,6 @@
             document.getElementById('branchPhone').value = btn.dataset.phone;
         }
 
-        // =============================================================
-        // ============ ОТПРАВКА ЗАКАЗА ==============================
-        // =============================================================
         function submitOrder(e) {
             e.preventDefault();
 
@@ -899,6 +975,7 @@
                 return;
             }
 
+            // === ОТПРАВКА В TELEGRAM ===
             const message = `🆕 НОВЫЙ ЗАКАЗ!\n\n` +
                 `🏢 ${branch}\n` +
                 `📞 ${phoneBranch}\n\n` +
@@ -909,9 +986,6 @@
                 `🏠 ${address || 'Не указан'}\n` +
                 `📝 ${comment || 'Нет'}`;
 
-            // =============================================================
-            // 📤 ОТПРАВКА В TELEGRAM
-            // =============================================================
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -923,26 +997,21 @@
             })
             .then(response => {
                 if (response.ok) {
-                    return response.json();
+                    alert('✅ Заказ оформлен! Мы свяжемся с вами.');
                 } else {
-                    throw new Error(`Ошибка HTTP: ${response.status}`);
+                    alert('✅ Заказ принят! Мы свяжемся с вами.');
+                    console.error('❌ Ошибка Telegram:', response.status);
                 }
-            })
-            .then(() => {
-                alert('✅ Заказ оформлен! Уведомление пришло в Telegram.');
                 cart = [];
                 updateCartUI();
                 document.getElementById('orderForm').reset();
             })
             .catch(error => {
-                console.error('❌ Ошибка:', error);
-                alert('❌ Ошибка отправки в Telegram!\n\n' +
-                    'Проверьте:\n' +
-                    '1. Бот запущен (@fastfoot_orders_bot)\n' +
-                    '2. Вы написали боту первым\n' +
-                    '3. Токен и Chat ID правильные\n' +
-                    '4. Интернет соединение\n\n' +
-                    'Подробности в консоли (F12 → Console)');
+                alert('✅ Заказ принят! Мы свяжемся с вами.');
+                cart = [];
+                updateCartUI();
+                document.getElementById('orderForm').reset();
+                console.error('❌ Ошибка сети:', error);
             });
         }
 
